@@ -190,7 +190,7 @@ for (const odd of odds) {
 //3.
 for (const [team, value] of Object.entries(game.odds)) {
   const playerStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
-  // console.log(`Odd of ${playerStr} ${value}`);
+  console.log(`Odd of ${playerStr} ${value}`);
 }
 
 // ------------------------object destructuring
