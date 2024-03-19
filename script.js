@@ -190,7 +190,7 @@ for (const odd of odds) {
 //3.
 for (const [team, value] of Object.entries(game.odds)) {
   const playerStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
-  console.log(`Odd of ${playerStr} ${value}`);
+  // console.log(`Odd of ${playerStr} ${value}`);
 }
 
 // ------------------------object destructuring
@@ -417,3 +417,142 @@ for (const [team, value] of Object.entries(game.odds)) {
 // 7.
 // team1 < team2 && console.log('Team 1 is more likely to win');
 // team1 > team2 && console.log('Team 1 is more likely to win');
+
+//! ------------------------------- Set ---------------------------
+
+// const fruits = new Set([
+//   'apple',
+//   'orange',
+//   'apple',
+//   'banana',
+//   'orange',
+//   'apple',
+// ]);
+// console.log(new Set('Daaanieeel'));
+
+// console.log(fruits);
+// console.log(fruits.size);
+// console.log(fruits.has('apple'));
+// console.log(fruits.has('melon'));
+// fruits.add('pineapple');
+// fruits.delete('orange');
+// fruits.clear();
+// console.log(fruits);
+// for (const fruit of fruits) console.log(fruit);
+
+// const staff = ['waiter', 'chef', 'teacher', 'waiter', 'chef'];
+// const uniqueStaff = new Set(staff);
+// console.log(uniqueStaff);
+
+// console.log(new Set('Daniel').size);
+
+//~ ------------------------------- Map ---------------------------
+
+// const rest = new Map();
+
+// rest.set('name', 'Best');
+// rest.set(1, 'Italy');
+// rest.set(2, 'Germany');
+
+// rest
+//   .set('category', ['breakfast', 'lunch', 'dinner'])
+//   .set('open', 10)
+//   .set('close', 23)
+//   .set(true, 'we are open')
+//   .set(false, 'we are close');
+
+// console.log(rest);
+
+// console.log(rest.get('name'));
+// console.log(rest.get(1));
+// console.log(rest.get(true));
+// console.log(rest.get('true')); // undefined
+
+// console.log(rest.has('open'));
+// rest.delete(2);
+// console.log(rest);
+// console.log(rest.size);
+// // rest.clear();
+
+// const time = 11;
+// console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+// const arr = [1, 2];
+
+// rest.set(arr, 'Test');
+// console.log(rest.get(arr));
+
+// rest.set(document.querySelector('h1'), 'Heading');
+// console.log(rest);
+
+//^ ------------------------------- Maps Iteration ---------------------------
+// *Quiz App
+
+/* const question = new Map([
+  ['question', 'What is the best programming language in the world?'],
+  [1, 'C'],
+  [2, 'Phyton'],
+  [3, 'Javascript'],
+  ['correct', 3],
+  [true, 'Correct ✅'],
+  [false, 'Try again! ❌'],
+]);
+
+console.log(question);
+
+// const hoursMap = new Map(Object.entries(openingHours));
+// console.log(hoursMap);
+
+console.log(question.get('question'));
+
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+
+const answer = 3;
+// const answer = Number(prompt('Your answer!'));
+console.log(answer);
+
+console.log(question.get(question.get('correct') === answer));
+
+// console.log(question.entries());
+console.log([...question]);
+console.log([...question.keys()]);
+console.log([...question.values()]); */
+
+// *FootBall App
+
+/* const gameEvents = new Map([
+  [17, '⚽️ GOAL'],
+  [36, '🔁 Substitution'],
+  [47, '⚽️ GOAL'],
+  [61, '🔁 Substitution'],
+  [64, '🔶 Yellow card'],
+  [69, '🔴 Red card'],
+  [70, '🔁 Substitution'],
+  [72, '🔁 Substitution'],
+  [76, '⚽️ GOAL'],
+  [80, '⚽️ GOAL'],
+  [92, '🔶 Yellow card'],
+]);
+
+// 1.
+const uniqueEvent = new Set(gameEvents.values());
+
+// 2.
+gameEvents.delete(64);
+
+// 3.
+console.log(
+  `An event happened, on average, every ${Math.floor(
+    90 / gameEvents.size
+  )} minutes`
+);
+//! how to remove numbers after dot in javscript
+
+// 4.
+
+for (const [min, event] of gameEvents) {
+  const half = min <= 45 ? 'First' : 'Second';
+  console.log(`[${half} Time] ${min}: ${event}`);
+} */
