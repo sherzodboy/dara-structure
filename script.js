@@ -556,3 +556,191 @@ for (const [min, event] of gameEvents) {
   const half = min <= 45 ? 'First' : 'Second';
   console.log(`[${half} Time] ${min}: ${event}`);
 } */
+
+// ^  --------------------- working with strings part 1
+/*
+const airline = 'Top air Aviasales';
+
+console.log(airline[0]);
+console.log(airline[1]);
+console.log(airline[2]);
+console.log('A123'[0]);
+
+console.log(airline.length);
+console.log('Daniel'.length);
+
+console.log(airline.indexOf('a'));
+console.log(airline.lastIndexOf('a'));
+console.log(airline.indexOf('air'));
+console.log(airline.indexOf('Air')); // -1
+
+console.log(airline.slice(4));
+console.log(airline.slice(4, 7));
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+console.log(airline.slice(-3));
+console.log(airline.slice(2, -2));
+
+const checkMiddleSeat = (seat) => {
+  // B va E orta qator
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') {
+    console.log('You are on middle seat');
+  } else {
+    console.log('You are lucky');
+  }
+};
+
+checkMiddleSeat('11A');
+checkMiddleSeat('4B');
+checkMiddleSeat('7C');
+checkMiddleSeat('23E');
+
+console.log(typeof new String('Daniel')); */
+
+// ^  --------------------- working with strings part 2
+
+/*
+const airline = 'Top air Aviasales';
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+const passanger = 'jOnAS'; // Jonas
+const passangerLower = passanger.toLowerCase();
+const passangerCorrect =
+  passangerLower[0].toUpperCase() + passangerLower.slice(1);
+console.log(passangerCorrect);
+
+const email = 'hello@gmail.com';
+const loginEmail = '     helLO@gmAIL.coM   \n';
+
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+
+// replacing
+const priceUz = '100,000s';
+const prizeUsd = priceUz.replace('s', '$').replace(',', '.');
+console.log(prizeUsd);
+
+const annauncement =
+  'All passengers are staying 23 hostels and 14 hostels room';
+
+// console.log(annauncement.replace(/hostels/g, 'hotels'));
+console.log(annauncement.replaceAll('hostels', 'hotels'));
+
+// Booleans
+const plane = 'Air A123new';
+console.log(plane.includes('A'));
+console.log(plane.includes('b'));
+console.log(plane.includes('new'));
+console.log(plane.startsWith('Ai'));
+
+if (plane.startsWith('Air') && plane.includes('new')) {
+  // console.log('You are flaying new plane');
+}
+
+const checkBaggage = (items) => {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are not allowed on board');
+  } else {
+    console.log('Welcome on board');
+  }
+};
+
+checkBaggage('I have Laptop, Telephone and Knife');
+checkBaggage('Snacks, apple and orange');
+checkBaggage('A gun for protection'); */
+
+// ^  --------------------- working with strings part 3
+/*
+
+// split and join
+console.log('a+very+nice+string'.split('+'));
+console.log('Tom Jasper'.split(' '));
+
+const [firstName, lastName] = 'Tom Jasper'.split(' ');
+const newName = ['Mr.', firstName, lastName].join(' ');
+console.log(newName);
+
+const capitalizationName = (name) => {
+  const names = name.split(' ');
+  const namesUpper = [];
+  for (const n of names) {
+    // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(namesUpper.join(' '));
+};
+
+capitalizationName('bob tom ann jonas daniel'); // Bob Tom Ann Jonas Daniel
+
+// padding
+const message = 'Go to gym 10!';
+console.log(message.padStart(20, '+').padEnd(25, '+'));
+
+const maskCredirCart = (number) => {
+  const str = number + '';
+  const last = str.slice(-4);
+
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCredirCart(1234567812345678));
+console.log(maskCredirCart('123456781234567833442323'));
+console.log(maskCredirCart('1234567812'));
+
+// repeat
+const message2 = 'Weather is bad, All passangers are delayed!';
+console.log(message2.repeat(3));
+
+const planeInLine = (n) => {
+  console.log(`There are ${n} planes in line ${'🛩️'.repeat(n)}`);
+};
+
+planeInLine(10);
+planeInLine(15);
+planeInLine(5); */
+
+// practise exersice
+
+/* 
+underscore_case
+ first_name
+Some_Variable
+  calculate_AGE
+delayed_departure
+*/
+
+/*
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+document.querySelector('button').addEventListener('click', function () {
+  const text = document.querySelector('textarea').value;
+
+  const rows = text.split('\n');
+  for (const [i, row] of rows.entries()) {
+    const [first, second] = row.toLowerCase().trim().split('_');
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`.padEnd(20, ' ');
+    console.log(`${output} ${'✅'.repeat(i + 1)}`);
+  }
+}); */
+
+// !homework
+const flights =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+// 🔴 Delayed Departure from FAO to TXL (11h25)
+//              Arrival from BRU to FAO (11h45)
+//   🔴 Delayed Arrival from HEL to FAO (12h05)
+//            Departure from FAO to LIS (12h30)
